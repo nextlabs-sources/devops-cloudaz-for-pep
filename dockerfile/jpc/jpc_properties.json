@@ -1,0 +1,20 @@
+{
+    "server_ip": "localhost",
+    "server_port": "8080",
+    "server_type": "TOMCAT",
+    "agent_type": "PORTAL",
+    "policy_controller_host": "jpc",
+    "policy_controller_port": "58080",
+    "cc_host": "icenet",
+    "cc_port": "6443",
+    "drive_root_dir": "/dev/xvda1",
+    "installation_dir": "/usr/share/tomcat8/nextlabs",
+    "dpc_path": "/usr/share/tomcat8/nextlabs/dpc",
+    "jboss_installation_type": "standalone",
+    "temp_dir": "/tmp",
+    "required_disk_space_mb": "250",
+    "version_number": "8.0.4",
+    "built_date": "2017-01-16",
+    "disable_jwt_filter": false,
+    "enable_jwt_filter": true
+}

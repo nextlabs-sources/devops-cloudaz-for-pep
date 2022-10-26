@@ -1,0 +1,49 @@
+{
+    "installation_dir" : "/opt/Nextlabs",
+    "installation_mode" : "install",
+    "console_install_mode": "OPN",
+    "license_file_location" : "/tmp/license.dat",
+    "admin_user_password" : "NextNext2019!",
+    "trust_store_password" : "NextNext2019!",
+    "key_store_password" : "NextNext2019!",
+    "installation_type" : "custom",
+    "dms_component" : "ON",              /* Management Server */
+    "dac_component" : "ON",              /* Intelligence Server */
+    "dps_component" : "ON",              /* Policy Management Server */
+    "dem_component" : "ON",              /* Enrollment Manager */
+    "admin_component" : "ON",            /* Administrator */
+    "reporter_component" : "ON",         /* Reporter */
+    "dabs_component" : "OFF",             /* ICENet Server */
+    "dkms_component" : "OFF",             /* Key Management Server */
+    "cc_console_component" : "ON",       /* Control Center Console */
+  
+    "installed_cc_host" : "",
+    "installed_cc_port" : "",
+  
+    "database_type": "POSTGRES",
+    "db_connection_url" : "postgresql://db:5432/ccdb",
+    "db_username" : "ccdbuser",
+    "db_password" : "123Next",
+    "db_ssl_certificate" : "",
+    "db_validate_server_dn": "false",
+  
+    "web_service_port" : "8443",
+    "web_application_port" : "443",
+  
+    "config_service_port" : "7443",
+    "web_shutdown_port" : "8005",
+  
+    "data_transportation_mode" : "PLAIN",
+    "data_transportation_shared_key" : "",
+    "data_transportation_plain_text_import" : "false",
+    "data_transportation_plain_text_export" : "false",
+  
+    "mail_server_url": "",
+    "mail_server_port": "",
+    "mail_server_username": "",
+    "mail_server_password": "",
+    "mail_server_from": "",
+    "mail_server_to": "",
+    "mail_server_ssl": "",
+    "temp_dir" : "/tmp"
+  }  

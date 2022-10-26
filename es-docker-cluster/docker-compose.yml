@@ -1,0 +1,62 @@
+version: '2.2'
+services:
+    elasticsearch:
+        image: docker.elastic.co/elasticsearch/elasticsearch:6.4.3
+        container_name: elasticsearch
+        environment:
+            - cluster.name=cc-data-cluster
+            - discovery.type=single-node
+            - bootstrap.memory_lock=true
+            - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+            - xpack.security.enabled=false
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+        volumes:
+            - esdata1:/usr/share/elasticsearch/data
+        ports:
+            - 9300:9300
+            - 9200:9200
+        network_mode: bridge
+        
+    elasticsearch2:
+        image: docker.elastic.co/elasticsearch/elasticsearch:6.4.3
+        container_name: elasticsearch2
+        environment:
+            - cluster.name=cc-data-cluster
+            - bootstrap.memory_lock=true
+            - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+            - "discovery.zen.ping.unicast.hosts=elasticsearch"
+            - xpack.security.enabled=false
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+        volumes:
+            - esdata2:/usr/share/elasticsearch/data
+        network_mode: bridge
+
+    kibana:
+        image: 'docker.elastic.co/kibana/kibana:6.3.2'
+        container_name: kibana
+        environment:
+            SERVER_NAME: kibana.local
+            ELASTICSEARCH_URL: http://elasticsearch:9200
+            
+        ports:
+            - '5601:5601'
+        network_mode: bridge
+
+    headPlugin:
+        image: 'mobz/elasticsearch-head:5'
+        container_name: head
+        ports:
+            - '9100:9100'
+        network_mode: bridge
+
+volumes:
+    esdata1:
+        driver: local
+    esdata2:
+        driver: local
